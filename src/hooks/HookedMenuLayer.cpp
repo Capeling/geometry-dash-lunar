@@ -8,8 +8,11 @@ bool HookedMenuLayer::init() {
     auto mainTitle = getChildByID("main-title");
     
     auto lunarTitle = CCSprite::createWithSpriteFrameName("GJL_lunarLogo_001.png"_spr);
-    lunarTitle->setPosition({334, -18});
+    lunarTitle->setPosition({334, -19});
     mainTitle->addChild(lunarTitle);
+
+    auto moreGamesBtn = static_cast<CCMenuItemSpriteExtra*>(getChildByID("more-games-menu")->getChildByID("more-games-button"));
+    moreGamesBtn->setNormalImage(CCSprite::createWithSpriteFrameName("GJL_creditsBtn_001.png"_spr));
 
     bool hasSeenSaveWarning = Mod::get()->getSavedValue<bool>("seen-saved-warning");
     if(!hasSeenSaveWarning) {
@@ -26,6 +29,11 @@ void HookedMenuLayer::onCreator(CCObject*) {
     auto dl = DialogLayer::createDialogLayer(nullptr, getDialogArray(), 2);
     dl->animateIn(DialogAnimationType::FromLeft);
     CCScene::get()->addChild(dl);
+}
+
+void HookedMenuLayer::onMoreGames(CCObject*) {
+    auto alert = FLAlertLayer::create("Credits", "<cl>Mod Developer</c>: Capeling\n<cg>Levels (1-4)</c>: GenaMorphosis\n<cp>Icons</c>: FatzFries", "OK");
+    alert->show();
 }
 
 CCArray* HookedMenuLayer::getDialogArray() {

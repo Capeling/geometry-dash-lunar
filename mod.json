@@ -17,6 +17,7 @@
 		"spritesheets": {
 			"LunarSheet":[
 				"resources/LunarSheet/GJL_secretDoor_001.png",
+				"resources/LunarSheet/GJL_creditsBtn_001.png",
 				"resources/LunarSheet/GJL_lunarLogo_001.png"
 			],
 			"player_05":[

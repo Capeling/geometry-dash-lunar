@@ -9,5 +9,8 @@ class $modify(HookedMenuLayer, MenuLayer) {
     $override
     void onCreator(CCObject*);
 
+    $override
+    void onMoreGames(CCObject*);
+
     CCArray* getDialogArray();
 };
