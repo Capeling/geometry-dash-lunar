@@ -16,6 +16,24 @@ class $modify(HookedLevelTools, LevelTools) {
     static gd::string getAudioString(int audioID);
 
     $override
+    static gd::string nameForArtist(int artistID);
+
+    $override
+    static int artistForAudio(int audioID);
+
+    $override
+    static gd::string urlForAudio(int audioID);
+
+    $override
+    static gd::string ngURLForArtist(int artistID);
+
+    $override
+    static gd::string ytURLForArtist(int artistID);
+
+    $override
+    static gd::string fbURLForArtist(int artistID);
+
+    $override
     static GJGameLevel* getLevel(int levelID, bool _save);
 
     static void setDifficulty(GJGameLevel* level, int stars, GJDifficulty difficulty);
