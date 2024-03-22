@@ -41,7 +41,7 @@ void HookedLevelPage::onInfo(CCObject* sender) {
 CCArray* HookedLevelPage::getDialogArray() {
     CCArray* array = CCArray::create();
 
-    array->addObject(WorkingDialogObject::create("Scratch", "<cr>HEY!</c> <d030>Hold on.", 11, 1, false, {255, 255, 255}));
+    array->addObject(WorkingDialogObject::create("Scratch", "<cr><s160>HEY!</s></c> <d030>Hold on.", 11, 1, false, {255, 255, 255}));
     array->addObject(WorkingDialogObject::create("Scratch", "It's too early for you to see <cl>him</c>.", 13, 1, false, {255, 255, 255}));
     array->addObject(WorkingDialogObject::create("Scratch", "Check <cl>him</c> out later, <d040>he's not in the mood <cg>right now.<d030>.<d030>.</c>", 12, 1, false, {255, 255, 255}));
     
