@@ -8,7 +8,7 @@ bool HookedMenuLayer::init() {
     auto mainTitle = getChildByID("main-title");
     
     auto lunarTitle = CCSprite::createWithSpriteFrameName("GJL_lunarLogo_001.png"_spr);
-    lunarTitle->setPosition({334, -19});
+    lunarTitle->setPosition({334, -20});
     mainTitle->addChild(lunarTitle);
 
     auto moreGamesBtn = static_cast<CCMenuItemSpriteExtra*>(getChildByID("more-games-menu")->getChildByID("more-games-button"));
@@ -41,7 +41,7 @@ CCArray* HookedMenuLayer::getDialogArray() {
 
     array->addObject(WorkingDialogObject::create("Scratch", "<cr><s190>STOP!</s></c> <d040>That will wake <cl>him</c> up.<d030>.<d030>.", 11, 1, false, {255, 255, 255}));
     array->addObject(WorkingDialogObject::create("Scratch", "You <cr><s100>can't</s></c> go here right now.", 8, 1, false, {255, 255, 255}));
-    array->addObject(WorkingDialogObject::create("Scratch", "Leave <cl>Lunar</c>, <d040>and I will let you <cg>through</c>.<d030>.<d030>.", 13, 1, false, {255, 255, 255}));
+    array->addObject(WorkingDialogObject::create("Scratch", "Leave <cl>Lunar</c>, <d040>and I will let you <cg>through.<d030>.<d030>.</c>", 13, 1, false, {255, 255, 255}));
     
     return array;
 }
