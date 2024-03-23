@@ -1,5 +1,6 @@
 #include "HookedMenuLayer.h"
 #include "../utils/WorkingDialogObject.h"
+#include "../layers/CreditsLayer.h"
 
 bool HookedMenuLayer::init() {
     if(!MenuLayer::init())
@@ -25,15 +26,17 @@ bool HookedMenuLayer::init() {
     return true;
 }
 
-void HookedMenuLayer::onCreator(CCObject*) {
+void HookedMenuLayer::onCreator(CCObject* sender) {
+    return MenuLayer::onCreator(sender);
     auto dl = DialogLayer::createDialogLayer(nullptr, getDialogArray(), 2);
     dl->animateIn(DialogAnimationType::FromTop);
     CCScene::get()->addChild(dl);
 }
 
 void HookedMenuLayer::onMoreGames(CCObject*) {
-    auto alert = FLAlertLayer::create("Credits", "<cl>Mod Developer</c>: Capeling\n<cg>Levels (1-4)</c>: GenaMorphosis\n<cp>Icons</c>: FatzFries", "OK");
-    alert->show();
+    //auto alert = FLAlertLayer::create("Credits", "<cl>Mod Developer</c>: Capeling\n<cg>Levels (1-4)</c>: GenaMorphosis\n<cp>Icons</c>: FatzFries", "OK");
+    //alert->show();
+    CreditsLayer::create("Credits")->show();
 }
 
 CCArray* HookedMenuLayer::getDialogArray() {

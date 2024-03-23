@@ -1,9 +1,17 @@
 #include "defs/all.h"
 #include "defs/utils.h"
 #include <Geode/modify/SongCell.hpp>
+//#include <Geode/modify/CCLabelBMFont.hpp>
 
 #define MEMBERBYOFFSET(type, class, offset) *reinterpret_cast<type*>(reinterpret_cast<uintptr_t>(class) + offset)
 #define MBO MEMBERBYOFFSET //lol
+
+/*class $modify(CCLabelBMFont) {
+	void limitLabelWidth(float width, float defaultScale, float minScale) {
+		log::info("CCLabelBMFont::limitLabelWidth({}, {}, {})", width, defaultScale, minScale);
+		CCLabelBMFont::limitLabelWidth(width, defaultScale, minScale);
+	};
+};*/
 
 std::string compareIcon(int iconID, std::string pszName, bool extra, bool doubleDigit) {
 	std::string compare1 = "";

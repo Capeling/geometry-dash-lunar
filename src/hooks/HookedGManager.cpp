@@ -9,7 +9,7 @@ void HookedGManager::setup() {
 
 void HookedGManager::saveGMTo(gd::string file) {
     log::info("file: {}", file);
-    if(file == "CCLocalLevels.dat") return GManager::loadDataFromFile(file);
+    if(file == "CCLocalLevels.dat") return GManager::saveGMTo(file);
     GManager::saveGMTo("CCGameManagerLunar.dat");
 }
 
