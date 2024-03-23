@@ -54,7 +54,7 @@ $on_mod(Loaded) {
 	// Space Battle
 	PatchTool::patch(0x38c22d, {0xc7, 0x40, 0x34, 0x2b});
 
-	// Get rid of the other default songs
+	// Get rid of the other default songs from SongsLayer
 	// Base After Base *
 	PatchTool::patch(0x38c28c, {0x90, 0x90, 0x90, 0x90, 0x90, 0x90});
 	// Cant Let Go *
