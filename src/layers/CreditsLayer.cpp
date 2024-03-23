@@ -4,10 +4,14 @@ bool CreditsLayer::setup(std::string const& title) {
     setID("credits-layer"_spr);
     setTitle(title, "bigFont.fnt", 0.8f);
 
+    auto capeUser = createCreditUser("Capeling", "Mod Developer", 475, 41, 52, 52, true, 18226543);
+    auto genaUser = createCreditUser("GenaMorphosis", "Levels (1-4)", 467, 6, 3, 1, true, 10026833);
+    auto fatzUser = createCreditUser("FatzFries", "Icons", 235, 18, 12, 12, true, 14007342);
+
     CCMenu* creditMenu = CCMenu::create();
-    creditMenu->addChild(createCreditUser("Capeling", "Mod Developer", 475, 41, 52, 52, true, 18226543));
-    creditMenu->addChild(createCreditUser("GenaMorphosis", "Levels (1-4)", 5, 6, 3, 1, true, 10026833));
-    creditMenu->addChild(createCreditUser("FatzFries", "Icons", 235, 18, 12, 12, true, 14007342));
+    creditMenu->addChild(capeUser);
+    creditMenu->addChild(genaUser);
+    creditMenu->addChild(fatzUser);
 
     GameToolbox::alignItemsHorisontally(creditMenu->getChildren(), 120.f, {0, 0}, true);
 
@@ -37,7 +41,7 @@ CCMenu* CreditsLayer::createCreditUser(const char* name, const char* reason, int
     userLabel->setScale(0.6f);
 
     CCMenuItemSpriteExtra* userBtn = CCMenuItemSpriteExtra::create(userLabel, this, menu_selector(CreditsLayer::onUser));
-    userBtn->setPosition({0, 30});
+    userBtn->setPosition({0, 31});
     userBtn->setTag(accountID);
 
     SimplePlayer* userPlayer = SimplePlayer::create(iconID);
