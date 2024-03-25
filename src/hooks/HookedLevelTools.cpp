@@ -37,7 +37,7 @@ gd::string HookedLevelTools::getAudioFileName(int audioID) {
     bool noCopyright = Mod::get()->getSettingValue<bool>("nocopyright");
     gd::string active = noCopyright ? "ActiveRemix.mp3"_spr : "Active.mp3"_spr;
     gd::string thunderZone = noCopyright ? "ThunderZoneRemix.mp3"_spr : "ThunderZone.mp3"_spr;
-    gd::string earthSplitter = noCopyright ? "EarthSplitter.mp3"_spr : "EarthSplitterRemix.mp3"_spr;
+    gd::string earthSplitter = noCopyright ? "EarthSplitterRemix.mp3"_spr : "EarthSplitter.mp3"_spr;
     gd::string spaceBattle = noCopyright ? "SpaceBattleRemix.mp3"_spr : "SpaceBattle.mp3"_spr;
     switch(audioID) {
         case 40: return active;
