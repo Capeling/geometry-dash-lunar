@@ -33,8 +33,10 @@ void HookedLevelPage::updateDynamicPage(GJGameLevel* level) {
 }
 
 void HookedLevelPage::onInfo(CCObject* sender) {
-    if(m_level->m_levelID.value() == -2)
+    if(m_level->m_levelID.value() == -2) {
+        
         return FLAlertLayer::create(nullptr, "The Vault", "The path leads to an <cr>old vault</c>. It's been left alone for <cg>years</c>, but still someone <co>lives</c> there.", "OK", nullptr, 360)->show();
+    }
     LevelPage::onInfo(sender);
 }
 

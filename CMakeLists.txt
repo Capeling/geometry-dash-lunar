@@ -13,6 +13,7 @@ file(GLOB_RECURSE SOURCES
     src/defs/*.cpp
     src/utils/*.cpp
     src/layers/*.cpp
+    src/nodes/*.cpp
     ${OS_SOURCES}
 )
 

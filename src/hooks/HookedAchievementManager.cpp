@@ -19,6 +19,8 @@ void HookedAchievementManager::addManualAchievements() {
     AchievementManager::addAchievement("geometry.ach.level04a", "Game Over", "Completed \'Space Battle\' in Practice mode", "Complete \'Space Battle\' in Practice mode", "icon_12", 1);
     AchievementManager::addAchievement("geometry.ach.level04b", "Space Battle!", "Completed \'Space Battle\' in Normal mode", "Complete \'Space Battle\' in Normal mode", "icon_08", 1);
 
+    //AchievementManager::addAchievement("geometry.ach.lunar.secret01", "Leave Me Alone!", "Got kicked out of the level menu", "Get kicked out of the level menu", "icon_475", 1);
+
     AchievementManager::addManualAchievements();
 }
 

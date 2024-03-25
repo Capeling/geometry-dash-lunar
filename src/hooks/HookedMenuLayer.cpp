@@ -29,7 +29,7 @@ bool HookedMenuLayer::init() {
 void HookedMenuLayer::onCreator(CCObject* sender) {
     //return MenuLayer::onCreator(sender);
     auto dl = DialogLayer::createDialogLayer(nullptr, getDialogArray(), 2);
-    dl->animateIn(DialogAnimationType::FromTop);
+    dl->animateIn(DialogAnimationType::FromLeft);
     CCScene::get()->addChild(dl);
 }
 
@@ -42,9 +42,9 @@ void HookedMenuLayer::onMoreGames(CCObject*) {
 CCArray* HookedMenuLayer::getDialogArray() {
     CCArray* array = CCArray::create();
 
-    array->addObject(WorkingDialogObject::create("Scratch", "<cr><s190>STOP!</s></c> <d040>That will wake <cl>him</c> up.<d030>.<d030>.", 11, 1, false, {255, 255, 255}));
-    array->addObject(WorkingDialogObject::create("Scratch", "You <cr><s100>can't</s></c> go here right now.", 8, 1, false, {255, 255, 255}));
-    array->addObject(WorkingDialogObject::create("Scratch", "Leave <cl>Lunar</c>, <d040>and I will let you <cg>through.<d030>.<d030>.</c>", 13, 1, false, {255, 255, 255}));
+    array->addObject(WorkingDialogObject::create("Scratch", "<cr><s190>STOP!</s></c> <d040><cl>He</c> will notice that.", 14, 1, false, {255, 255, 255}));
+    array->addObject(WorkingDialogObject::create("Scratch", "Its too <cr>risky</c>, <d020>you can't go right now.", 8, 1, false, {255, 255, 255}));
+    array->addObject(WorkingDialogObject::create("Scratch", "Leave <cl>Lunar</c>, <d030>and I will let you <cg>through.<d030>.<d030>.</c>", 12, 1, false, {255, 255, 255}));
     
     return array;
 }
