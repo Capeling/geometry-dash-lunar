@@ -16,4 +16,3 @@ gd::string HookedGameManager::sheetNameForIcon(int iconID, int iconType) {
     //log::info("result: {}", result);
     return GameManager::sheetNameForIcon(iconID, iconType);
 }
-

@@ -11,7 +11,7 @@ bool HookedLevelTools::verifyLevelIntegrity(gd::string verifyString, int levelID
             if(verifyString.size() == 2161581) isValid = true;
             break;
         case 3:
-            if(verifyString.size() == 3858465) isValid = true;
+            if(verifyString.size() == 3872970) isValid = true;
             break;
         case 4:
             if(verifyString.size() == 4413382) isValid = true;
