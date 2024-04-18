@@ -12,6 +12,4 @@ public:
 
     //$override
     //CCDictionary* addAchievement(gd::string achID, gd::string title, gd::string descUnlock, gd::string descLock, gd::string reward, int idk);
-
-    void patchOutPrevious();
 };
