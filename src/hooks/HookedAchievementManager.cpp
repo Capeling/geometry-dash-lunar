@@ -1,27 +1,73 @@
 #include "HookedAchievementManager.h"
 
 void HookedAchievementManager::addManualAchievements() {
-    patchOutPrevious();
 
-    //Active
     AchievementManager::addAchievement("geometry.ach.level01a", "Turned Off", "Completed \'Active\' in Practice mode", "Complete \'Active\' in Practice mode", "icon_09", 1);
     AchievementManager::addAchievement("geometry.ach.level01b", "Active!", "Completed \'Active\' in Normal mode", "Complete \'Active\' in Normal mode", "icon_05", 1);
 
-    //Thunderzone
     AchievementManager::addAchievement("geometry.ach.level02a", "Thunderbolt", "Completed \'Thunderzone\' in Practice mode", "Complete \'Thunderzone\' in Practice mode", "icon_10", 1);
     AchievementManager::addAchievement("geometry.ach.level02b", "Thunderzone!", "Completed \'Thunderzone\' in Normal mode", "Complete \'Thunderzone\' in Normal mode", "icon_06", 1);
 
-    //Earthsplitter
     AchievementManager::addAchievement("geometry.ach.level03a", "Earthquake", "Completed \'Earthsplitter\' in Practice mode", "Complete \'Earthsplitter\' in Practice mode", "icon_11", 1);
     AchievementManager::addAchievement("geometry.ach.level03b", "Earthsplitter!", "Completed \'Earthsplitter\' in Normal mode", "Complete \'Earthsplitter\' in Normal mode", "icon_07", 1);
 
-    //Space Battle
     AchievementManager::addAchievement("geometry.ach.level04a", "Game Over", "Completed \'Space Battle\' in Practice mode", "Complete \'Space Battle\' in Practice mode", "icon_12", 1);
     AchievementManager::addAchievement("geometry.ach.level04b", "Space Battle!", "Completed \'Space Battle\' in Normal mode", "Complete \'Space Battle\' in Normal mode", "icon_08", 1);
 
-    //AchievementManager::addAchievement("geometry.ach.lunar.secret01", "Leave Me Alone!", "Got kicked out of the level menu", "Get kicked out of the level menu", "icon_475", 1);
+    AchievementManager::addAchievement("geometry.ach.coins01", "Coins?!", "Collected 5 Secret Coins", "Collect 5 Secret Coins", "icon_31", 1);
+    AchievementManager::addAchievement("geometry.ach.coins02", "Maybe behind that block?", "Collected 10 Secret Coins", "Collect 10 Secret Coins", "ball_04", 1);
+    AchievementManager::addAchievement("geometry.ach.coins03", "I.. Need... MORE!", "Collected 15 Secret Coins", "Collect 15 Secret Coins", "color2_16", 1);
+    AchievementManager::addAchievement("geometry.ach.coins04", "We wants it!", "Collected 20 Secret Coins", "Collect 20 Secret Coins", "bird_03", 1);
+    AchievementManager::addAchievement("geometry.ach.coins05", "We needs it!", "Collected 25 Secret Coins", "Collect 25 Secret Coins", "icon_32", 1);
+    AchievementManager::addAchievement("geometry.ach.coins06", "Must have the precious", "Collected 30 Secret Coins", "Collect 30 Secret Coins", "color_15", 1);
+    AchievementManager::addAchievement("geometry.ach.coins07", "They stole it from us!", "Collected 35 Secret Coins", "Collect 35 Secret Coins", "ball_03", 1);
+    AchievementManager::addAchievement("geometry.ach.coins08", "Where is it?! Where is it?!", "Collected 40 Secret Coins", "Collect 40 Secret Coins", "icon_34", 1);
 
-    AchievementManager::addManualAchievements();
+    AchievementManager::addAchievement("geometry.ach.jump01", "Bounce", "Jumped 1000 times", "Jump 1000 times", "color2_05", 0);
+    AchievementManager::addAchievement("geometry.ach.jump02", "I like jumping", "Jumped 10000 times", "Jump 10000 times", "color2_11", 0);
+    AchievementManager::addAchievement("geometry.ach.jump03", "You jump like a pro!", "Jumped 20000 times", "Jump 20000 times", "color2_12", 0);
+    AchievementManager::addAchievement("geometry.ach.jump04", "Hop Hop Hop", "Jumped 50000 times", "Jump 50000 times", "bird_05", 0);
+    AchievementManager::addAchievement("geometry.ach.jump05", "Can\'t stop jumping!!!", "Jumped 100000 times", "Jump 100000 times", "ball_13", 0);
+    AchievementManager::addAchievement("geometry.ach.jump06", "Jumper", "Jumped 200000 times", "Jump 200000 times", "color_56", 0);
+    AchievementManager::addAchievement("geometry.ach.jump07", "You need to rest...", "Jumped 300000 times", "Jump 300000 times", "icon_371", 0);
+    AchievementManager::addAchievement("geometry.ach.jump08", "Jumpman", "Jumped 400000 times", "Jump 400000 times", "dart_93", 0);
+    AchievementManager::addAchievement("geometry.ach.jump09", "One hop this time!", "Jumped 500000 times", "Jump 500000 times", "icon_365", 0);
+    AchievementManager::addAchievement("geometry.ach.jump10", "Leaps and bounds!", "Jumped 750000 times", "Jump 750000 times", "dart_45", 0);
+    AchievementManager::addAchievement("geometry.ach.jump11", "Jump King", "Jumped 1000000 times", "Jump 1000000 times", "swing_32", 0);
+
+    AchievementManager::addAchievement("geometry.ach.attempt01", "Trial and error", "Did 100 attempts", "Do 100 attempts", "color2_06", 0);
+    AchievementManager::addAchievement("geometry.ach.attempt02", "Crash Tester", "Did 500 attempts", "Do 500 attempts", "color2_07", 0);
+    AchievementManager::addAchievement("geometry.ach.attempt03", "You Shall Not Pass!", "Did 2000 attempts", "Do 2000 attempts", "color2_14", 0);
+    AchievementManager::addAchievement("geometry.ach.attempt04", "Ouch...", "Did 10000 attempts", "Do 10000 attempts", "color2_17", 0);
+    AchievementManager::addAchievement("geometry.ach.attempt05", "That hurts!", "Did 20000 attempts", "Do 20000 attempts", "dart_03", 0);
+    AchievementManager::addAchievement("geometry.ach.attempt06", "Never Give Up", "Did 30000 attempts", "Do 30000 attempts", "icon_341", 0);
+    AchievementManager::addAchievement("geometry.ach.attempt07", "Never Surrender", "Did 40000 attempts", "Do 40000 attempts", "color_96", 0);
+    AchievementManager::addAchievement("geometry.ach.attempt08", "Mom said it\'s my turn", "Did 60000 attempts", "Do 60000 attempts", "ship_161", 0);
+    AchievementManager::addAchievement("geometry.ach.attempt09", "If at first you don\'t succeed", "Did 80000 attempts", "Do 80000 attempts", "icon_407", 0);
+    AchievementManager::addAchievement("geometry.ach.attempt10", "Stop Trying", "Did 100000 attempts", "Do 100000 attempts", "swing_09", 0);
+    AchievementManager::addAchievement("geometry.ach.attempt11", "This could become a meme", "Did 135000 attempts", "Do 135000 attempts", "ball_117", 0);
+    AchievementManager::addAchievement("geometry.ach.attempt12", "Take a break!", "Did 185000 attempts", "Do 185000 attempts", "ball_46", 0);
+    AchievementManager::addAchievement("geometry.ach.attempt13", "Made an attempt", "Did 250000 attempts", "Do 250000 attempts", "ship_65", 0);
+    AchievementManager::addAchievement("geometry.ach.attempt14", "This is the one", "Did 300000 attempts", "Do 300000 attempts", "icon_368", 0);
+
+    AchievementManager::addAchievement("geometry.ach.facebook", "Number one fan!", "Liked Geometry Dash on Facebook", "Like Geometry Dash on Facebook", "color2_13", 0);
+    AchievementManager::addAchievement("geometry.ach.youtube", "GeometryTube", "Subscribed to RobTop Games on YouTube", "Subscribe to RobTop Games on YouTube", "color2_30", 0);
+    AchievementManager::addAchievement("geometry.ach.twitter", "Geometry Bird!", "Followed RobTop Games on Twitter", "Follow RobTop Games on Twitter", "color2_31", 0);
+
+    AchievementManager::addAchievement("geometry.ach.special01", "So close", "Crashed at over 95% on a main level in normal mode", "Crash at over 95% on a main level in normal mode", "color2_18", 0);
+
+    AchievementManager::addAchievement("geometry.ach.secret01", "Rampage!", "Destroyed a player", "A secret is required", "color2_19", 0);
+    AchievementManager::addAchievement("geometry.ach.secret02", "Dominating!", "Destroyed 50 players", "A secret is required", "icon_41", 0);
+    AchievementManager::addAchievement("geometry.ach.secret02b", "Ultrakill!", "Destroyed 100 players", "A secret is required", "color2_27", 0);
+    AchievementManager::addAchievement("geometry.ach.secret03", "Godlike!", "Destroyed 200 players", "A secret is required", "icon_39", 0);
+    AchievementManager::addAchievement("geometry.ach.secret03b", "Wickedsick!", "Destroyed 500 players", "A secret is required", "ball_12", 0);
+    AchievementManager::addAchievement("geometry.ach.secret04", "Master Detective", "Found the hidden coin", "A hidden treasure is required", "color2_21", 0);
+
+    #ifdef GEODE_IS_WINDOWS
+    AchievementManager::addAchievement("geometry.ach.steam01", "Steamrolling!", "Completed level 1-3 in Normal mode (Steam Exclusive)", "Complete level 1-3 in Normal mode (Steam Exclusive)", "icon_47", 0);
+    #endif
+
+    //AchievementManager::addManualAchievements();
 }
 
 //CCDictionary* HookedAchievementManager::addAchievement(gd::string achID, gd::string title, gd::string descUnlock, gd::string descLock, gd::string reward, int idk) {
@@ -30,116 +76,4 @@ void HookedAchievementManager::addManualAchievements() {
 
 void HookedAchievementManager::reportAchievementWithID(char const* p0, int p1, bool p2) {
     AchievementManager::reportAchievementWithID(p0, p1, p2);
-}
-
-void HookedAchievementManager::patchOutPrevious() {
-    //Stereo Madness *
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0a90b), {0x90, 0x90, 0x90, 0x90, 0x90});
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0a985), {0x90, 0x90, 0x90, 0x90, 0x90});
-    
-    //Back On Track *
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0a9ff), {0x90, 0x90, 0x90, 0x90, 0x90});
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0aa79), {0x90, 0x90, 0x90, 0x90, 0x90});
-
-    //Polargeist *
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0aaf3), {0x90, 0x90, 0x90, 0x90, 0x90});
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0ab6d), {0x90, 0x90, 0x90, 0x90, 0x90});
-
-    //Dry Out *
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0abe7), {0x90, 0x90, 0x90, 0x90, 0x90});
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0ac61), {0x90, 0x90, 0x90, 0x90, 0x90});
-
-    //Base After Base *
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0acdb), {0x90, 0x90, 0x90, 0x90, 0x90});
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0ad55), {0x90, 0x90, 0x90, 0x90, 0x90});
-    
-    //Cant Let Go *
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0adcf), {0x90, 0x90, 0x90, 0x90, 0x90});
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0ae49), {0x90, 0x90, 0x90, 0x90, 0x90});
-
-    //Jumper *
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0aec3), {0x90, 0x90, 0x90, 0x90, 0x90});
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0af3d), {0x90, 0x90, 0x90, 0x90, 0x90});
-
-    //Time Machine *
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0afb7), {0x90, 0x90, 0x90, 0x90, 0x90});
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0b031), {0x90, 0x90, 0x90, 0x90, 0x90});
-
-    //Cycles *
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0b0ab), {0x90, 0x90, 0x90, 0x90, 0x90});
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0b125), {0x90, 0x90, 0x90, 0x90, 0x90});
-    
-    //xStep *
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0b19f), {0x90, 0x90, 0x90, 0x90, 0x90});
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0b219), {0x90, 0x90, 0x90, 0x90, 0x90});
-
-    //Clutterfunk *
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0b293), {0x90, 0x90, 0x90, 0x90, 0x90});
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0b30d), {0x90, 0x90, 0x90, 0x90, 0x90});
-
-    //Theory of Everything *
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0b387), {0x90, 0x90, 0x90, 0x90, 0x90});
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0b401), {0x90, 0x90, 0x90, 0x90, 0x90});
-
-    //Electroman Adventures *
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0b47b), {0x90, 0x90, 0x90, 0x90, 0x90});
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0b4f5), {0x90, 0x90, 0x90, 0x90, 0x90});
-    
-    //Clubstep *
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0b56f), {0x90, 0x90, 0x90, 0x90, 0x90});
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0b5e9), {0x90, 0x90, 0x90, 0x90, 0x90});
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0d01f), {0x90, 0x90, 0x90, 0x90, 0x90});
-
-    //Electrodynamix *
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0b663), {0x90, 0x90, 0x90, 0x90, 0x90});
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0b6dd), {0x90, 0x90, 0x90, 0x90, 0x90});
-
-    //Hexagon Force *
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0b757), {0x90, 0x90, 0x90, 0x90, 0x90});
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0b7d1), {0x90, 0x90, 0x90, 0x90, 0x90});
-
-    //Blast Processing *
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0b84b), {0x90, 0x90, 0x90, 0x90, 0x90});
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0b8c5), {0x90, 0x90, 0x90, 0x90, 0x90});
-    
-    //Theory Of Everything 2 *
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0b93f), {0x90, 0x90, 0x90, 0x90, 0x90});
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0b9b9), {0x90, 0x90, 0x90, 0x90, 0x90});
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0d099), {0x90, 0x90, 0x90, 0x90, 0x90});
-
-    //Geometrical Dominator *
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0ba33), {0x90, 0x90, 0x90, 0x90, 0x90});
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0baad), {0x90, 0x90, 0x90, 0x90, 0x90});
-
-    //Deadlocked *
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0bb27), {0x90, 0x90, 0x90, 0x90, 0x90});
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0bba1), {0x90, 0x90, 0x90, 0x90, 0x90});
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0d113), {0x90, 0x90, 0x90, 0x90, 0x90});
-
-    //Fingerdash *
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0bc1b), {0x90, 0x90, 0x90, 0x90, 0x90});
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0bc95), {0x90, 0x90, 0x90, 0x90, 0x90});
-    
-    //Dash *
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0bd0f), {0x90, 0x90, 0x90, 0x90, 0x90});
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0bd89), {0x90, 0x90, 0x90, 0x90, 0x90});
-
-    //Tower 1
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0be03), {0x90, 0x90, 0x90, 0x90, 0x90});
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0bfeb), {0x90, 0x90, 0x90, 0x90, 0x90});
-
-    //Tower 2
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0be7d), {0x90, 0x90, 0x90, 0x90, 0x90});
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0c065), {0x90, 0x90, 0x90, 0x90, 0x90});
-
-    //Tower 3
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0bef7), {0x90, 0x90, 0x90, 0x90, 0x90});
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0c0df), {0x90, 0x90, 0x90, 0x90, 0x90});
-
-    //Tower 4
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0bf71), {0x90, 0x90, 0x90, 0x90, 0x90});
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x0c159), {0x90, 0x90, 0x90, 0x90, 0x90});
-
-    // Complete 10 User Levels
-    Mod::get()->patch(reinterpret_cast<void*>(base::get() + 0x12479), {0x90, 0x90, 0x90, 0x90, 0x90});
 }

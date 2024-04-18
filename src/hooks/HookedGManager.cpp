@@ -1,20 +1,12 @@
 #include "HookedGManager.h"
-#include "HookedLocalLevelManager.h"
 
 void HookedGManager::setup() {
 
-    //m_fileName = "CCGameManagerLunar.dat";
+    auto compare = std::string(m_fileName);
+
+    compare.insert(std::string_view(compare).find(".dat"), "Lunar");
+
+    m_fileName = compare;
     GManager::setup();
-}
-
-void HookedGManager::saveGMTo(gd::string file) {
-    log::info("file: {}", file);
-    if(file == "CCLocalLevels.dat") return GManager::saveGMTo("CCLocalLevelsLunar.dat"); //people having issues with saves being deleted? this works ig
-    GManager::saveGMTo("CCGameManagerLunar.dat");
-}
-
-void HookedGManager::loadDataFromFile(gd::string const& file) {
-    log::info("file load: {}", file);
-    if(file == "CCLocalLevels.dat") return GManager::loadDataFromFile("CCLocalLevelsLunar.dat"); //same thing
-    GManager::loadDataFromFile("CCGameManagerLunar.dat");
+    log::info("m_fileName: {}", m_fileName);
 }

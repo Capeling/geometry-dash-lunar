@@ -2,19 +2,18 @@
 
 bool HookedLevelTools::verifyLevelIntegrity(gd::string verifyString, int levelID) {
     bool isValid = false;
-    log::info("size: {}", verifyString.size());
     switch(levelID) {
         case 1:
-            if(verifyString.size() == 1021811) isValid = true;
+            if(verifyString.size() == 1029093) isValid = true;
             break;
         case 2:
-            if(verifyString.size() == 2161581) isValid = true;
+            if(verifyString.size() == 2161744) isValid = true;
             break;
         case 3:
-            if(verifyString.size() == 3872970) isValid = true;
+            if(verifyString.size() == 3873233) isValid = true;
             break;
         case 4:
-            if(verifyString.size() == 4413382) isValid = true;
+            if(verifyString.size() == 4414142) isValid = true;
             break;
         default:
             break;
@@ -23,7 +22,6 @@ bool HookedLevelTools::verifyLevelIntegrity(gd::string verifyString, int levelID
 }
 
 gd::string HookedLevelTools::getAudioTitle(int audioID) {
-    log::info("audioID: {}", audioID);
     switch(audioID) {
         case 40: return "Active";
         case 41: return "ThunderZone";
@@ -102,29 +100,50 @@ int HookedLevelTools::artistForAudio(int audioID) {
 }
 
 GJGameLevel* HookedLevelTools::getLevel(int levelID, bool _save) {
-    GJGameLevel* level = LevelTools::getLevel(levelID, _save);
-
-    level->m_audioTrack += 40;
-    level->m_levelName = HookedLevelTools::getAudioTitle(39 + levelID);
+    GJGameLevel* level = GJGameLevel::create();
 
     switch(levelID) {
         case 1: 
-            setDifficulty(level, 2, GJDifficulty::Normal);
+            setLevelInfo(level, 2, GJDifficulty::Hard, 0, 16328); //active
+            level->m_levelName = getAudioTitle(40);
+            level->m_audioTrack = 40;
+            level->m_coins = 3;
             break;
         case 2:
-            setDifficulty(level, 3, GJDifficulty::Hard);
+            setLevelInfo(level, 3, GJDifficulty::Hard, 0, 16965); //thunderzone
+            level->m_levelName = getAudioTitle(41);
+            level->m_audioTrack = 41;
+            level->m_coins = 3;
             break;
         case 3:
-            setDifficulty(level, 4, GJDifficulty::Harder);
+            setLevelInfo(level, 4, GJDifficulty::Harder, 0, 19858); //earthsplitter
+            level->m_levelName = getAudioTitle(42);
+            level->m_audioTrack = 42;
+            level->m_coins = 3;
             break;
         case 4:
-            setDifficulty(level, 6, GJDifficulty::Harder);
+            setLevelInfo(level, 6, GJDifficulty::Insane, 0, 18787); //space battle
+            level->m_levelName = getAudioTitle(43);
+            level->m_audioTrack = 43;
+            level->m_coins = 3;
             break;
     }
+    level->m_levelID = levelID;
     return level;
 }
 
-void HookedLevelTools::setDifficulty(GJGameLevel* level, int stars, GJDifficulty difficulty) {
+void HookedLevelTools::setLevelInfo(GJGameLevel* level, int stars, GJDifficulty difficulty, int coinsRequired, int frameTime) {
     level->m_stars = stars;
     level->m_difficulty = difficulty;
+    level->m_requiredCoins = coinsRequired;
+    level->m_levelType = GJLevelType::Local;
+    #ifdef GEODE_IS_WINDOWS
+    MBO(int, level, 0x414) = frameTime;
+    #endif
+    #ifdef GEODE_IS_ANDROID64
+    MBO(int, level, 0x390) = frameTime;
+    #endif
+    #ifdef GEODE_IS_ANDROID32
+    MBO(int, level, 0x310) = frameTime;
+    #endif
 }

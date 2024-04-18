@@ -3,7 +3,8 @@
 
 void HookedLevelPage::onTheTower(CCObject* sender) {
     auto dl = DialogLayer::createDialogLayer(nullptr, getDialogArray(), 2);
-    dl->animateIn(DialogAnimationType::FromRight);
+    log::info("hi");
+    dl->animateInRandomSide();
     CCScene::get()->addChild(dl);
 }
 

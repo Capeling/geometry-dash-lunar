@@ -1,40 +1,6 @@
 #include "defs/all.h"
 #include "defs/utils.h"
 #include <Geode/modify/SongCell.hpp>
-//#include <Geode/modify/CCLabelBMFont.hpp>
-
-#define MEMBERBYOFFSET(type, class, offset) *reinterpret_cast<type*>(reinterpret_cast<uintptr_t>(class) + offset)
-#define MBO MEMBERBYOFFSET //lol
-
-/*class $modify(CCLabelBMFont) {
-	void limitLabelWidth(float width, float defaultScale, float minScale) {
-		log::info("CCLabelBMFont::limitLabelWidth({}, {}, {})", width, defaultScale, minScale);
-		CCLabelBMFont::limitLabelWidth(width, defaultScale, minScale);
-	};
-};*/
-
-std::string compareIcon(int iconID, std::string pszName, bool extra, bool doubleDigit) {
-	std::string compare1 = "";
-	std::string compare2 = "";
-	std::string compare3 = "";
-	std::string compare4 = "";
-	if(doubleDigit) {
-		compare1 = fmt::format("player_{}_001.png", iconID);
-		compare2 = fmt::format("player_{}_2_001.png", iconID);
-		compare3 = fmt::format("player_{}_extra_001.png", iconID);
-		compare4 = fmt::format("player_{}_glow_001.png", iconID);	
-	} else {
-		compare1 = fmt::format("player_0{}_001.png", iconID);
-		compare2 = fmt::format("player_0{}_2_001.png", iconID);
-		compare3 = fmt::format("player_0{}_extra_001.png", iconID);
-		compare4 = fmt::format("player_0{}_glow_001.png", iconID);
-	}
-	if(pszName == compare1) pszName = std::string(Mod::get()->expandSpriteName(pszName.c_str()));
-	if(pszName == compare2) pszName = std::string(Mod::get()->expandSpriteName(pszName.c_str()));
-	if (extra) if(pszName == compare3) pszName = std::string(Mod::get()->expandSpriteName(pszName.c_str()));
-	if(pszName == compare4) pszName = std::string(Mod::get()->expandSpriteName(pszName.c_str()));
-	return pszName;
-}
 
 $on_mod(Loaded) {
 	int levelStart = 1;
@@ -113,29 +79,3 @@ class $modify(SongCell) { //why is this in main? because i cant be fucked making
 			songLabel->setScale(0.573);
 	}
 };
-
-CCSpriteFrame* mySpriteFrameByName(CCSpriteFrameCache* self, const char *pszName) {
-	auto compare = std::string(pszName);
-	std::string aReturn = pszName;
-	aReturn = compareIcon(5, aReturn, true, false);
-	aReturn = compareIcon(6, aReturn, true, false);
-	aReturn = compareIcon(7, aReturn, true, false);
-	aReturn = compareIcon(8, aReturn, false, false);
-	aReturn = compareIcon(9, aReturn, false, false);
-	aReturn = compareIcon(10, aReturn, false, true);
-	aReturn = compareIcon(11, aReturn, true, true);
-	aReturn = compareIcon(12, aReturn, false, true);
-
-	return self->spriteFrameByName(aReturn.c_str());
-}
-
-$execute {
-	Mod::get()->hook(
-		reinterpret_cast<void*>(
-			geode::addresser::getNonVirtual(&CCSpriteFrameCache::spriteFrameByName)
-		),
-		&mySpriteFrameByName,
-		"cocos2d::CCSpriteFrameCache::spriteFrameByName",
-		tulip::hook::TulipConvention::Thiscall
-	);
-}
